@@ -1,0 +1,39 @@
+=== Option Transfer Select===
+@author jackfiallos
+@original sharehua http://www.yiiframework.com/forum/index.php?/user/303-sharehua/
+@version 0.0.1
+@link original version taken from http://www.yiiframework.com/extension/optiontransferselect/
+@copyright Copyright &copy; 2008-2010 by Yii Software LLC.
+@tags: yii framework, extension
+
+Copyright &copy; 2008-2010 by Yii Software LLC. All rights reserved.
+
+== Installation ==
+Extract under protected/extensions
+
+== How to use ==
+[code]
+$leftOption = array(
+	'id1'=>'name1',
+	'id2'=>'name2'
+);
+$rightOption = array(
+	'id3'=>'name3',
+	'id4'=>'name4',
+	'id4'=>'name4',
+	'id5'=>'name5'
+);
+
+echo CHtml::beginForm();
+$this->widget('application.extensions.optiontransferselect.Optiontransferselect', array(
+	'leftTitle'=>'Left Title Listbox',
+	'rightTitle'=>'Right Title Listbox',
+	'listName'=>'NameList',
+	'LeftDataList'=>$leftOption,
+	'RightDataList'=>$rightOption,
+	'LeftListHtmlOptions'=>array('size'=>'8','style'=>'width:120px'),
+	'RightListHtmlOptions'=>array('size'=>'8','style'=>'width:120px'),
+));
+echo CHtml::tag('button', array('name'=>'btnSubmit','type'=>'submit','value'=>'submit'), 'Send');
+echo CHtml::endForm();
+[/code]
